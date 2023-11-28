@@ -28,11 +28,14 @@ GET ```/organizations/{orgName}/retrieve-data```: Retrieve data in Excel format 
 
 ### Configuration
 
-The application can be configured through application.properties. You may configure the server port, database connection, and other settings as needed.
+```The application can be configured through application.properties. You may configure the server port, database connection, and other settings as needed.```
 
 ### DATABASE:MongoDB
 
 
+### Frontend
+
+```I have used Vanilla Javascript,HTML,CSS```
 
 
 
