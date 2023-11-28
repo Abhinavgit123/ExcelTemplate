@@ -2,6 +2,7 @@ package com.excelTemplate.demo.Service;
 
 import com.excelTemplate.demo.Entity.OrganizationData;
 import com.excelTemplate.demo.Repository.OrganizationDataRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.formula.functions.Column;
 import java.util.NoSuchElementException;
 import org.apache.poi.ss.usermodel.Cell;
@@ -10,6 +11,8 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayOutputStream;
@@ -17,6 +20,7 @@ import java.io.IOException;
 import java.util.*;
 
 @Service
+@Slf4j
 public class OrganizationDataService {
     @Autowired
     private OrganizationDataRepository organizationDataRepository;
@@ -29,10 +33,9 @@ public class OrganizationDataService {
 
         Map<String, List<String>> existingData = organizationData.getData();
         if (existingData == null) {
-            existingData = new HashMap<>();
+            existingData = new LinkedHashMap<>();
         }
 
-        // Merge the new data with the existing data
         for (Map.Entry<String, List<String>> entry : data.entrySet()) {
             String fieldName = entry.getKey();
             List<String> fieldValues = entry.getValue();
@@ -54,8 +57,19 @@ public class OrganizationDataService {
 
 
     public OrganizationData retrieveData(String orgId) {
-        return organizationDataRepository.findById(orgId)
-                .orElseThrow(() -> new NoSuchElementException("No data found for orgId: " + orgId));
+        try {
+            return organizationDataRepository.findById(orgId)
+                    .orElseThrow(() -> new NoSuchElementException("No data found for orgId: " + orgId));
+        } catch (NoSuchElementException ex) {
+            log.error("No data found for orgId: {}", orgId);
+            // Handle the exception, return a default value, or do something appropriate
+            // For example, you might return a special OrganizationData instance or null
+            return null;
+        } catch (Exception ex) {
+            log.error("An unexpected error occurred", ex);
+            // Handle other exceptions, log them, and return a default value or null
+            return null;
+        }
     }
 
 
@@ -72,22 +86,29 @@ public class OrganizationDataService {
                 cell.setCellValue(entry.getKey());
             }
 
-            int colIndex = 0;
+               // Starting from the second row
+            int colIndex = 0;  // Starting from the first column
+
             for (String fieldName : data.keySet()) {
+                rowIndex = 1;
                 List<String> fieldValues = data.get(fieldName);
-                rowIndex = 1;  // Starting from the second row
+
                 for (String value : fieldValues) {
                     Row dataRow = sheet.getRow(rowIndex);
                     if (dataRow == null) {
-                        dataRow = sheet.createRow(rowIndex++);
+                        dataRow = sheet.createRow(rowIndex);
                     }
 
                     Cell cell = dataRow.createCell(colIndex);
                     cell.setCellValue(value);
+
+                    rowIndex++;
                 }
+
+                // Move to the next column
                 colIndex++;
-//                rowIndex++;
             }
+
             workbook.write(outputStream);
             return outputStream.toByteArray();
         } catch (IOException e) {
