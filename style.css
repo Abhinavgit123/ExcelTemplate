@@ -1,0 +1,168 @@
+body {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 28px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  text-shadow: 8px 8px 10px #0000008c;
+  background-color: #343a40;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right top, #343a40, #2b2c31, #211f22, #151314, #000000);
+}
+
+/* Main title styles (h1) */
+h1 {
+  font-size: 40px;
+  color: #007BFF;
+  margin-top: 0;
+}
+
+/* Section title styles (h2) */
+h2 {
+  font-size: 20px;
+  color: #007BFF;
+  margin-top: 100px;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+label {
+  font-size: 16px;
+  color: #f6f2f2;
+  margin-right: 10px;
+}
+
+.error-label {
+  font-size: 16px;
+  color:turquoise;
+  margin-right: 10px;
+
+}
+
+#enter-json-label{
+  color:rgb(10, 10, 10);
+  margin-right: 10px;
+  font-size: 16px;
+
+
+}
+
+input[type="text"] {
+  font-size: 16px;
+  padding: 5px;
+  border: 5px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: 16px;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px; 
+  margin-right: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styles */
+#action-buttons {
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  display: none;
+  margin-top: 20px; /* Add space at the top of the section */
+}
+
+#data-entry {
+  display: none;
+  margin: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #93c71b;
+  border-radius: 5px;
+  background-color: #706c6c;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#message-to-enter-input{
+  display: none;
+  color: #111111;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#json-input {
+  display: none;
+  width: 100%;
+  max-width: 400px;
+  height: 100px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #a73434;
+  border-radius: 5px;
+}
+
+#submit-json {
+  display: none;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#submit-json:hover {
+  background-color: #0056b3;
+}
+
+
+#json-display {
+  display: none;
+  font-weight: bold;
+  margin: 50px ;
+  padding: 50 px;
+  border: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+#json-result-404 {
+  display: none;
+  font-weight: bold;
+  margin: 50px;
+  padding: 50px;
+  border: 1px solid black;
+}
+
+
+
+
+
+#orgId-section {
+  display: block;
+}
+

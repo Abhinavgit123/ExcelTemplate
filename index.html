@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Organization Data</h1>
+
+
+    <ul>
+        <ul id="data-list">
+    </ul>
+      
+
+    <div id="orgId-section">
+        <label for="orgId">ORGID:</label>
+        <input type="text" id="orgId" name="orgId">
+        <button id="submit-button" type="button">Submit</button>
+    </div>
+
+    <div id="action-buttons" style="display: none;">
+        <button id="add-data">Add data</button>
+        <button id="display-data">Display Data</button>
+        <button id="download-excel">Download Excel</button>
+    </div>
+
+    <div id="data-entry">
+        <form id="jsonForm">
+            <label for="json-input">Enter JSON Data:</label>
+            <br>
+            <label class="error-label" for="json-input1">Ensure data is in the format of { "key1": ["value1", "value2"] } !</label>     
+            <textarea id="json-input" name="jsonData" rows="5" cols="40"></textarea>
+            <br>
+            <div id="message-to-enter-input">Please enter your JSON data</div>
+            <br>
+            <button type="button" id="submit-json">Submit JSON</button>
+        </form>
+    </div>
+
+    <div id="json-display">Data has been added to the current Organisation ID</div>
+
+    <div id="json-result-404">No Data has been found for the Organisation ID</div>
+
+      
+
+    
+    
+    <script src="app.js"></script>
+</body>
+</html>
