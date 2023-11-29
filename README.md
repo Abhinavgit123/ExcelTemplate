@@ -18,6 +18,7 @@ GET ```/organizations/{orgName}/retrieve-data```: Retrieve data in Excel format 
 ### Open the project in your preferred IDE.
 
 
+
 ### Build the project using Maven:
 
 ```mvn clean install```
@@ -38,6 +39,13 @@ GET ```/organizations/{orgName}/retrieve-data```: Retrieve data in Excel format 
 ```I have used Vanilla Javascript,HTML,CSS```
 
 
-
-
-
+<img width="176" alt="Screenshot 2023-11-29 at 4 13 55 PM" src="https://github.com/Abhinavgit123/ExcelTemplate/assets/129087199/0d8c69c0-dffb-4cc1-8a5b-28278490de7b">
+<br>
+<img width="1440" alt="Screenshot 2023-11-28 at 11 15 01 PM" src="https://github.com/Abhinavgit123/ExcelTemplate/assets/129087199/14ff3793-2c01-4deb-8340-033264f35d50">
+<br>
+<img width="527" alt="Screenshot 2023-11-28 at 11 15 20 PM" src="https://github.com/Abhinavgit123/ExcelTemplate/assets/129087199/64121cec-165c-435a-9232-c68c9a2443b5">
+<br>
+<img width="625" alt="Screenshot 2023-11-28 at 11 16 54 PM" src="https://github.com/Abhinavgit123/ExcelTemplate/assets/129087199/466b200b-4d7f-4995-82f7-491a62c045d4">
+<br>
+<img width="598" alt="Screenshot 2023-11-28 at 11 17 05 PM" src="https://github.com/Abhinavgit123/ExcelTemplate/assets/129087199/a04ad11f-1a86-4561-95ab-c7745820f008">
+<br>
